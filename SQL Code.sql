@@ -122,3 +122,57 @@ SET sellers_gender_country.index_no = users_data.identifierHash/10000000000;
 update sellers_gender_country
 set index_no=0
 where index_no is null
+##########################################24 Feb 2024#################################################
+# Top 5 selling countries
+select country, round(num/total_sellers, 2) as mean
+from (
+	select country, sum(meanproductssold*nbsellers) as num, sum(nbsellers) as total_sellers
+    from sellers_gender_country
+    group by country
+) table2
+order by mean desc
+limit 5;
+
+# total products listed by the sellers
+select country, sum(totalproductslisted) as total_products
+from sellers_gender_country
+group by country
+order by total_products;
+# top 5 countries in that are 
+# Italy, France, Royaume-Uni, Etats-Unis, Espagne
+# And Kazakhstan, Bahamas, Slovenia have no produts listed
+
+# Checking whether there is any relation between total_products_listed and total_products_sold
+select country, rank() over(order by total_sale desc) as sale_rank, rank() over(order by total_listed desc) as list_rank
+from (select country, sum(totalproductssold) as total_sale, sum(totalproductslisted) as total_listed
+from sellers_gender_country
+group by country) t2
+order by 3;
+# There seems to be a positive correlation between the total_products_listed and total_products_sold
+
+select country, meanfollowing, meanfollowers
+from top_selling_countries
+order by meanfollowing desc;
+
+select country, rank() over(order by meanfollowing desc) as following_rank, rank() over (order by meanfollowers desc) as followers_rank
+from top_selling_countries
+order by 2;
+# Here there seems to be not much correlation.
+
+# users based on country
+select distinct countryCode, country
+from users_data
+where country = 'Qatar';	
+
+# total socialNbfollowers
+select country, total_followers
+from (
+	select country, sum(socialNbFollowers) as total_followers, count(*) as nb_followers
+    from users_data
+    group by country
+) users_data1
+order by total_followers desc;
+
+select gender, sum(socialNbFollowers) as total_followers
+from users_data
+group by gender
