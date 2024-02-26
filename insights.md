@@ -13,9 +13,9 @@
 * Qatar has two country codes.
 * Top 5 countries with most number of followers
      * France, Etats-Unis, Royaume-Uni, Italie and Allemagne
-     * 
-###### **Some key times in the project**
+* Females have more number of followers compared to males. It is almost 3.4 times greater for the females compared to the males.
+###### **Some key aspects of the project**
 * I was able to observe that the total number of products sold has also been included as row. That has been deleted.
 * Created an index for a table that had no index by creating a new column and updating it with primary index of some other column
-* I was able to find correlation between two columns based on the ranks of the rows with respect to columns. They were almost matching. There seems to be a positive correlation between them.
+* Found correlation between two columns based on the ranks of the rows with respect to columns. They were almost matching. There seems to be a positive correlation between them.
 * 
