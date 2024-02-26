@@ -14,6 +14,7 @@
 * Top 5 countries with most number of followers
      * France, Etats-Unis, Royaume-Uni, Italie and Allemagne
 * Females have more number of followers compared to males. It is almost 3.4 times greater for the females compared to the males.
+* Those sellers who have both Android and Ios Apps have the highest average sale. Those who do not have neither have the least average sale.
 ###### **Some key aspects of the project**
 * I was able to observe that the total number of products sold has also been included as row. That has been deleted.
 * Created an index for a table that had no index by creating a new column and updating it with primary index of some other column
