@@ -10,6 +10,10 @@
 * Taiwan, Monaco, Bulgarie, Chypre, Lettonie have highest mean followers
 * Italie, Lettonie, Bulgarie, France, Sweden are the countries based on the order of highest meanfollowing (the avg people the sellers are following.)
 * But There is no correlation between mean followers and mean following.
+* Qatar has two country codes.
+* Top 5 countries with most number of followers
+     * France, Etats-Unis, Royaume-Uni, Italie and Allemagne
+     * 
 ###### **Some key times in the project**
 * I was able to observe that the total number of products sold has also been included as row. That has been deleted.
 * Created an index for a table that had no index by creating a new column and updating it with primary index of some other column
